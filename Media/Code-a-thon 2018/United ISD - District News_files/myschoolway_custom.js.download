@@ -1,0 +1,65 @@
+$(document).ready(function() {
+    setTimeout(function(){scrollDown()},3000);
+    $('#scrollUp').click(function(){
+        scrollStop();
+        scrollDown();
+    });
+    
+    $('#scrollDown').click(function(){
+        scrollStop();
+        scrollUp()
+    });	
+    
+    $('#SchoolWayOuter').scroll(function() {
+        if ($(this)[0].scrollHeight - $(this).scrollTop() == $(this).outerHeight()) {
+            scrollStop();
+            scrollToTop();
+        }
+        if ($(this).scrollTop() ==0) {
+            scrollStop();
+            scrollDown();
+        }
+    });
+    
+    $('#SchoolWayOuter').mouseover(function(){
+        scrollStop();
+    });
+    
+    $('#SchoolWayOuter').mouseleave(function(){
+        if($('#direction').val() == 'down'){
+            scrollDown();
+        }
+        if($('#direction').val() == 'up'){
+            scrollUp();
+        }	
+    });
+    function scrollDown(){
+        var swHeigth = $('#SchoolWay').height();
+        $('#direction').val('down');
+        $("#SchoolWayOuter").animate({ scrollTop: swHeigth}, parseInt($("#scrollDownSpeed").val()), 'linear');
+    }
+    
+    function scrollStop(){
+        $("#SchoolWayOuter").stop();
+    }
+    
+    function scrollUp(){
+        $('#direction').val('up');
+        var position = $("#SchoolWayOuter").position();
+        $("#SchoolWayOuter").animate({ scrollTop: 0,}, parseInt($("#scrollUpSpeed").val()), 'linear');
+    }
+    
+    function scrollToTop(){
+        $('#direction').val('up');
+        var position = $("#SchoolWayOuter").position();
+        $("#SchoolWayOuter").animate({ scrollTop: 0,}, parseInt($("#scrollToTopSpeed").val()), 'linear');
+    }
+    
+    function chk_scroll(e){
+        var elem = $(e.currentTarget);
+        if (elem[0].scrollHeight - elem.scrollTop() == elem.outerHeight()) 
+        {
+            console.log("bottom");
+        }
+    }
+}); 

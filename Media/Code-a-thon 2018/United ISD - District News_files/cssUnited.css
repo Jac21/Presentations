@@ -1,0 +1,112 @@
+/* Card for Directors */
+
+.card { 
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5); 
+width: 70%; padding: 40px 0px 40px 0px;
+} 
+
+.no-border .card {
+border-left: 5px solid #7ab3ef !important;
+
+}
+@media screen and (max-width: 650px) {
+.column{
+width: 100%; 
+display: block; 
+margin-left: 10%; 
+}
+.card {
+text-align: center; 
+/*margin-left: 5%; mm 7/23/19 */
+}
+.united {
+float: none !important;
+  }
+}
+
+/* Card - Director's Picture */
+
+.united {
+float: left; 
+height: 167px; 
+width: 120px; 
+margin-left: 20px; 
+margin-right: 20px;
+}
+
+/* Staff Table */
+
+table.departments th {
+text-transform: uppercase;
+}
+table.departments td:nth-child(1) {
+font-weight: normal !important;
+}
+
+/* Staff Table - Mobile View */
+
+@media screen and (max-width: 600px) {
+#card table.departments {
+border: 0px !important;
+}
+#card table.departments thead {
+display: none; }
+#card table.departments tr {
+margin-bottom: 20px;
+display: block;
+border-bottom: 2px solid #ddd;
+box-shadow: 2px 2px 1px #dadada;
+}
+#card table.departments td {
+display: block;
+text-align: center;
+font-size: 13px;
+}
+#card table.departments td.title {
+text-align: center;
+font-size: 20px;
+}
+#card table.departments td:last-child {
+border-bottom: 0px;
+}
+#card table.departments td::before {
+content: attr(data-label);
+display: none;
+}
+#card table.departments td.col_4 {
+display: none;}
+}
+
+/* General Bootstrap CSS */
+
+.jumbotron {
+background-color: #f5f5f5 !important;
+}
+.jumbotron p {
+font-size: 16px !important;
+font-weight: 100;
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.modal-united {
+top: 100px;
+}
+.close-united {
+margin: 0px;
+padding: 0px;
+float: right;
+font-size: 21px;
+font-weight: 700;
+line-height: 1;
+color: #000;
+text-shadow: 0 1px 0 #fff; filter: alpha(opacity=20);
+opacity: 0.2;
+background: 0 0;
+border: 0;
+margin-top: -50px;
+}
+img.staff {
+  border-radius: 15px 15px 15px 15px;
+  width: 200px;
+}
+
+
